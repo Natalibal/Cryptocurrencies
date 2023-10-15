@@ -1,0 +1,497 @@
+.currencies__container{
+    background-color: black;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+.sberbank-rub{
+    display: flex;
+    margin: 10px;
+}
+.sberbank-rub img{
+    width: 50px;
+    height: 50px;
+}
+.sberbank-rub p{
+    padding: 10px;
+    margin: 5px;
+}
+.tinkoff{
+    display: flex;
+    margin: 10px;
+}
+.tinkoff img{
+    width: 50px;
+    height: 50px;
+}
+.tinkoff p{
+    padding: 10px;
+    margin: 5px;
+}
+.visa-rub{
+    display: flex;
+    margin: 10px;
+}
+.visa-rub img{
+    width: 50px;
+}
+.visa-rub p{
+    padding: 10px;
+    margin: 5px;
+}
+.vtb{
+    display: flex;
+    margin: 10px;
+}
+.vtb img{
+    width: 50px;
+}
+.vtb p{
+    padding: 10px;
+    margin: 5px;
+}
+.alfabank{
+    display: flex;
+    margin: 10px;
+}
+.alfabank img{
+    width: 50px;
+    height: 50px;
+}
+.alfabank p{
+    padding: 10px;
+    margin: 5px;
+}
+.otkritie{ 
+    display: flex;
+    margin: 10px 0px; 
+}
+.otkritie img{
+    width: 60px;
+}
+.otkritie p{
+    padding: 10px;
+    margin: 10px;
+}
+.ripple{
+    display: flex;
+    margin: 10px;
+}
+.ripple img{
+    width: 50px;
+}
+.ripple p{
+    padding: 10px;
+    margin: 5px;
+}
+.monero{
+    display: flex;
+    margin: 10px;
+}
+.monero img{
+    width: 50px;
+}
+.monero p{
+    padding: 10px;
+    margin: 5px;
+}
+.sol{
+    display: flex;
+    margin: 10px; 
+}
+.sol img{
+    width: 50px;
+}
+.sol p{
+    padding: 10px;
+    margin: 5px;
+}
+.zcash{
+    display: flex;
+    margin: 10px; 
+}
+.zcash img{
+    width: 50px;
+}
+.zcash p{
+    padding: 10px;
+    margin: 5px;
+}
+.shib{ 
+    display: flex;
+    margin: 10px; 
+}
+.shib img{
+    width: 50px;
+}
+.shib p{
+    padding: 10px;
+    margin: 5px;
+}
+.sweat{
+    display: flex;
+    margin: 10px; 
+}
+.sweat img{
+    width: 45px;
+}
+.sweat p{
+    padding: 10px;
+    margin: 5px;
+}
+.usd-coin{ display: flex;
+    margin: 10px;
+}
+
+.usd-coin p{
+    padding: 10px;
+    margin: 5px;
+}                                                         
+.usd-coin img{
+    width: 45px;
+}
+.jusan-bank{ 
+    display: flex;
+    margin: 10px;
+}
+.jusan-bank img{
+    width: 45px;
+}
+.jusan-bank p{
+    margin: 5px;
+    padding: 10px;
+} 
+
+/*currencies__container-medium*/
+.bitcoin{ 
+    display: flex;
+    margin: 10px 30px 10px -25px;                             
+}
+.bitcoin img{
+    width: 120px;
+}
+.bitcoin p{
+    padding: 11px 0px;
+    margin: 10px 0px;
+}
+.doge{
+    display: flex;
+    margin: 10px;
+}
+.doge img{
+    width: 45px;
+    height: 45px
+}
+.doge p{
+    padding: 10px;
+    margin: 5px 15px;
+}
+.litecoin{
+    display: flex;
+    margin: 10px -20px;
+}
+.litecoin img{
+    width: 100px;
+    height: 45px
+}
+.litecoin p{
+    padding: 11px -2px;
+    margin: 10px 0px;
+}
+.bnb{
+    display: flex;
+    margin: 10px;
+}
+.bnb img{
+    width: 50px;
+}
+.bnb p{
+    padding: 10px;
+    margin: 5px;
+}
+.tron{
+    display: flex;
+    margin: 10px; 
+}
+.tron img{
+    width: 45px;
+}
+.tron p{
+    padding: 10px;
+    margin: 5px;
+}
+.bitcoin-cash{
+    display: flex;
+    margin: 10px -10px;
+}
+.bitcoin-cash img{
+    width: 80px;
+}
+.bitcoin-cash p{
+    padding: 11px 0px;
+    margin: 10px 5px;
+}
+.dogecoin{
+    display: flex;
+    margin: 10px -10px;
+}
+.dogecoin img{
+    width: 70px;
+}
+.dogecoin p{
+    padding: 11px 0px;
+    margin: 10px 5px;
+}
+.bereke-bank{
+    display: flex;
+    margin: 10px -5px;
+}
+.bereke-bank img{
+    width: 50px;
+}
+.bereke-bank p{
+    padding: 10px;
+    margin: 5px;
+}
+.polygon{
+    display: flex;
+    margin: 10px;
+}
+.polygon img{
+    width: 50px;
+}
+.polygon p{
+    padding: 10px;
+    margin: 5px;
+}
+.mir{
+    display: flex;
+    margin: 10px;
+}
+.mir img{
+    width: 50px;
+    height: 50px;
+}
+.mir p{
+    padding: 10px;
+    margin: 5px;
+}
+.luna{
+    display: flex;
+    margin: 10px;
+}
+.luna img{
+    width: 50px;
+    height: 50px;
+}
+.luna p{
+    padding: 10px;
+    margin: 5px;
+} 
+.home-credit{
+    display: flex;
+    margin: 10px;
+}
+.home-credit img{
+    width: 50px;
+    height: 50px;
+}
+.home-credit p{
+    padding: 10px;
+    margin: 5px;
+} 
+.qiwi{
+    display: flex;
+    margin: 10px;
+}
+.qiwi img{
+    width: 50px;
+    height: 50px;
+}
+.qiwi p{
+    padding: 10px;
+    margin: 5px;
+} 
+.money{
+    display: flex;
+    margin: 10px;
+}
+.money img{
+    width: 50px;
+    height: 50px;
+}
+.money p{
+    padding: 10px;
+    margin: 5px;
+}
+
+/*currencies__container-left*/
+
+.visa-kzt{
+    display: flex;
+    margin: 10px;
+}
+.visa-kzt img{
+    width: 50px;
+    height: 50px;
+}
+.visa-kzt p{
+    padding: 10px;
+    margin: 5px;
+}
+.halyk{
+    display: flex;
+    margin: 10px;
+}
+.halyk img{
+    width: 50px;
+    height: 50px;
+}
+.halyk p{
+    padding: 10px;
+    margin: 5px;  
+}
+.sbp{
+    display: flex;
+    margin: 10px;
+}
+.sbp img{
+    width: 50px;
+    height: 50px;
+}
+.sbp p{
+    padding: 10px;
+    margin: 5px;   
+}
+.rncb{
+    display: flex;
+    margin: 10px;
+}
+.rncb img{
+    width: 50px;
+    height: 50px;
+}
+.rncb p{
+    padding: 10px;
+    margin: 5px;    
+}
+.gazprombank{
+    display: flex;
+    margin: 10px -5px;
+}
+.gazprombank img{
+    width: 50px;
+    height: 50px;
+}
+.gazprombank p{
+    padding: 10px;
+    margin: 5px;    
+}
+.kaspi{
+    display: flex;
+    margin: 10px -5px;
+}
+.kaspi img{
+    width: 65px;
+}
+.kaspi p{
+    padding: 10px;
+    margin: 5px;    
+}
+.eth{
+    display: flex;
+    margin: 10px;
+}
+.eth img{
+    width: 35px;
+    height: 60px;
+}
+.eth p{
+    padding: 10px;
+    margin: 10px;    
+}
+.rosBank{
+    display: flex;
+    margin: 10px;
+}
+.rosBank img{
+    width: 50px;
+    height: 50px;
+}
+.rosBank p{
+    padding: 10px;
+    margin: 5px;     
+}
+.algo{
+    display: flex;
+    margin: 10px;
+}
+.algo img{
+    width: 50px;
+    height: 50px;
+}
+.algo p{
+    padding: 10px;
+    margin: 5px;     
+}
+.stellar{
+    display: flex;
+    margin: 10px;
+}
+.stellar img{
+    width: 50px;
+    height: 50px;
+}
+.stellar p{
+    padding: 10px;
+    margin: 5px;     
+}
+.dash{
+    display: flex;
+    margin: 10px;
+}
+.dash img{
+    width: 50px;
+    height: 50px;
+}
+.dash p{
+    padding: 10px;
+    margin: 5px;     
+}
+.tether{
+    display: flex;
+    margin: 10px;
+}
+.tether img{
+    width: 50px;
+    height: 50px;
+}
+.tether p{
+    padding: 10px;
+    margin: 5px;       
+}
+.tethersol{
+    display: flex;
+    margin: 10px;
+}
+.tethersol img{
+    width: 50px;
+    height: 50px;
+}
+.tethersol p{
+    padding: 10px;
+    margin: 5px;   
+}
+.tetherer{
+    display: flex;
+    margin: 10px;
+}
+.tetherer img{
+    width: 50px;
+    height: 50px;
+}
+.tetherer p{
+    padding: 10px;
+    margin: 5px;  
+}

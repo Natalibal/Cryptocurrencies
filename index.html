@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Crypto</title>
+</head>
+<body>
+    <div class="wrapper">
+        <!--hero-page-->
+        <section class="hero-page">
+            <div class="hero-page__heder">
+                <div class="hero-page__logo">
+                    <img src="./Image/logo-removebg-preview.png" alt="logo">
+                    <p>BUY: 970N/$ SELL: 950N/S</p>
+                </div>
+                <div class="hero-page__container">
+                    <div class="hero-page__title">
+                        <h1>Navigating the <br>digital world</h1>
+                    </div>
+                    <div class="hero-page__text">
+                        <h3>INSTANT TRADING: REAL-TIME & AUTOMATED PAYMENTS. <br>
+                            TRADING BITCOIN HAS NEVER BEEN SO EASY!</h3>
+                    </div>
+                    <div class="hero-page__button">
+                        <a href="#converter">START EXCHANGE</a>
+                    </div>
+                    <div class="hero-page__arrow">
+                        <img src="./Icon/arrow.png" alt="">
+                    </div>
+                </div>
+                <div class="hero-page__message">
+                    <a href=""> <img src="./Icon/мп-removebg-preview.png" alt=""></a>
+                </div>
+            </div>
+        </section>
+        <main class="page">
+            <!--converter-->
+            <section class="converter" id="converter">
+                <div class="converter__logo">
+                    <img src="./Image/logo-removebg-preview.png" alt="">
+                </div>
+                <div class="converter__container">
+                    <div class="converter__box">
+                        <div class="converter__container-left">
+                            <p class="converter__container-txt">Working hours 24/7</p>
+                            <div class="converter__container-give">
+                                <div class="converter__container-give-item">
+                                    <p class="converter__container-give-txt">You give</p>
+                                    <div class="converter__container-give-select">
+                                        <select class="select-give" id="currency-give" required>
+                                        </select>
+                                        <input type="number" class="val" id="base" oninput="convert()" />
+                                    </div>
+                                    <div class="converter__container-give-random">
+                                        <div class="converter__container-give-min">
+                                            <p>Min:</p>
+                                            <div class="converter__container-give-min-number">0.02</div>
+                                            <div class="converter__container-give-min-currency">ETH</div>
+                                        </div>
+                                        <div class="converter__container-give-max">
+                                            <p>Max:</p>
+                                            <div class="converter__container-give-max-number">150</div>
+                                            <div class="converter__container-give-max currency">ETH</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="convertor__container-left-bottom">
+                                <div class="converter__search">
+                                    <div class="converter__search-input">
+                                        <input type="text" id="currencySearch" placeholder="Currency search">
+                                        <div id="searchResults"></div>
+                                    </div>    
+                                </div>
+                                <div class="convertor__container-left-columns">
+                                    <div class="column" data-info="All">
+                                        <p>All</p>
+                                        <hr class="line">
+                                    </div>
+                                    <div class="column" data-info="Banks">
+                                        <p>Banks</p>
+                                        <hr class="line">
+                                    </div>
+                                    <div class="column" data-info="Crypto">
+                                        <p>Crypto</p>
+                                        <hr class="line">
+                                    </div>
+                                    <div class="column" data-info="Payment">
+                                        <p>Payment systems</p>
+                                        <hr class="line">
+                                    </div>
+                                </div>
+                                <div class="info-box">
+                                    <ul class="info-list" id="info-text">
+                                        <li style="cursor: pointer; display: flex; margin: 10px 30px 10px -25px;">
+                                            <img src="./Image/images (20).png" alt="Bitcoin" style = "width: 100px;">
+                                            <p style="padding: 11px 0px; margin: 10px 0px;">Bitcoin</p> 
+                                        </li>
+                                        <li style="cursor: pointer; display: flex; margin: 10px;">
+                                            <img src="./Image/images (21).png" alt="DOGE" style=" width: 40px; height: 40px;">
+                                            <p style="padding: 10px; margin: 5px 15px;">DOGE</p>
+                                        </li>
+                                        <li style="cursor: pointer; display: flex; margin: 10px -20px;">
+                                            <img src="./Image/images (18).png" alt="Litecoin" style="width: 100px; height: 45px">
+                                            <p style="padding: 11px -2px; margin: 10px 0px;">Litecoin</p>
+                                        </li>
+                                        <li style="cursor: pointer; display: flex; margin: 10px;">
+                                            <img src="./Image/images (19).png" alt="BNB" style="width: 40px;">
+                                            <p style="padding: 10px; margin: 5px 15px;">BNB</p>
+                                        </li>
+                                        <li style="cursor: pointer; display: flex;margin: 10px; ">
+                                            <img src="./Image/images (22).png" alt="Tron" style="width: 45px;">
+                                            <p style="padding: 10px;margin: 5px;">Tron</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="converter__container-medium">
+                            <div class="converter__container-get-item">
+                                <p class="converter__container-get-txt">You get</p>
+                                <div class="converter__container-get-select">
+                                    <select class="select-get" id="currency-get" required>
+                                       
+                                    </select>
+                                    <input type="number" class="val" id="result" disabled oninput="convert()" />
+                                </div>
+                                <div class="converter__container-get-random">
+                                    <div class="converter__container-get-min">
+                                        <p>Min:</p>
+                                        <div class="converter__container-get-min-number">0.02</div>
+                                        <div class="converter__container-get-min-currency">ETH</div>
+                                    </div>
+                                    <div class="converter__container-get-max">
+                                        <p>Max:</p>
+                                        <div class="converter__container-get-max-number">150</div>
+                                        <div class="converter__container-get-max currency">ETH</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="convertor__container-medium-bottom">
+                                <div class="converter__search">
+                                    <div class="converter__search-input">
+                                        <input type="text" id="currencySearch" placeholder="Currency search">
+                                        <div id="searchResults"></div>
+                                    </div>    
+                                </div>
+
+                                <div class="convertor__container-medium-columns">
+                                    <div class="column__medium" data-info__medium="All">
+                                        <p>All</p>
+                                        <hr class="line__medium">
+                                    </div>
+                                    <div class="column__medium" data-info__medium="Banks">
+                                        <p>Banks</p>
+                                        <hr class="line__medium">
+                                    </div>
+                                    <div class="column__medium" data-info__medium="Crypto">
+                                        <p>Crypto</p>
+                                        <hr class="line__medium">
+                                    </div>
+                                    <div class="column__medium" data-info__medium="Payment">
+                                        <p>Payment systems</p>
+                                        <hr class="line__medium">
+                                    </div>
+                                </div>
+                                <div class="info-box-medium">
+                                    <ul class="info-list__medium" id="info-text__medium">
+                                        <li style="cursor: pointer; display: flex; margin: 10px;">
+                                            <img src="./Image/ап.png" alt="Sberbank RU" style = "width: 50px;height: 50px;">
+                                            <p style="padding: 10px; margin: 5px;">Sberbank RU</p> 
+                                        </li>
+                                        <li style="cursor: pointer; display: flex; margin: 10px;">
+                                            <img src="./Image/kisspng_visa_mastercard_computer_icons_clip_art_portable_n_visa.png" alt="Visa/MC kzt" style = "width: 50px;height: 50px;">
+                                            <p style="padding: 10px; margin:10px 5px;">Visa/MC kzt</p> 
+                                        </li>
+                                        <li style="cursor: pointer; display: flex; margin: 10px;">
+                                            <img src="./Image/kisspng_visa_mastercard_computer_icons_clip_art_portable_n_visa.png" alt="Visa/MC RU" style = "width: 50px;">
+                                            <p style="padding: 10px; margin: 5px;">Visa/MC RU</p> 
+                                        </li>
+                                        <li style="cursor: pointer; display: flex; margin: 10px 30px 10px -20px;">
+                                            <img src="./Image/images (20).png" alt="Bitcoin" style = "width: 100px;">
+                                            <p style="padding: 11px 0px; margin: 10px 0px;">Bitcoin</p> 
+                                        </li>
+                                        <li style="cursor: pointer; display: flex; margin: 5px 10px;">
+                                            <img src="./Image/images (13).png" alt="Halyk Bank" style = "width: 50px;height: 50px;">
+                                            <p style="padding: 10px; margin: 5px;">Halyk Bank</p> 
+                                        </li>
+                                    </ul>
+                                </div>
+                        </div>
+                        </div>
+                
+                    <div class="converter__container-right">
+                        <p class="converter__container-right-title">
+                            Course details
+                        </p>
+                        <p class="converter__container-right-exchange">
+                            Exchange at the rate of:
+                        </p>
+                        <div class="converter__container-right-result">fbsffv</div>
+                        <p class="converter__container-right-text">
+                            You have selected the ERC20 network. Check that
+                            your output/receive address supports the ERC20
+                            network. If the other platform does not support
+                            the network, you may lose your assets.
+                        </p>
+                        <form action="#" class="converter__container-right-form">
+                            <input type="email" id="formEmail" name="email" class="form__input " placeholder="Your email">
+                            <input type="text" id="formWallet" name="wallet" class="form__input " placeholder="Tether (TRC20) wallet">
+                        </form>
+                        <p class="converter__container-right-text">
+                            Send only Tether using the TRC20 standard,
+                            sending using the ERC20 and Omni standard will
+                            result in loss of funds.
+                        </p>
+                        <div class="converter__container-right-checkbox">
+                            <div class="converter__container-right-checkbox1">
+                                <div>
+                                    <input type="checkbox" id="agreement">
+                                </div>
+                                <div>
+                                    <span class="converter__container-right-checkbox-txt">I agree with the policy</span>
+                                    <a href="#"class="checkbox-info">AML/KYC policy</a>
+                                    <span class="converter__container-right-checkbox-txt">and</span>
+                                    <a href="#" class="checkbox-info">exchange rules</a>
+                                </div>
+                            </div>
+                            <div class="converter__container-right-checkbox-btn">
+                                <button id="submitButton" disabled onclick="startExchange()">Start exchange </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <!--currency-->
+            <section class="currency">
+
+            </section>
+            <!--coinvision-->
+            <section class="coinvision">
+                <div class="coinvision__title">
+                    <h3>Why COINVISION</h3>
+                </div>
+                <div class="coinvision__item">
+                        <div class="coinvision__container1">
+                            <div class="coinvision__icon">
+                                <img src="./Icon/jlv___копія-removebg-preview.png" alt="">
+                            </div>
+                            <div class="coinvision__titl">
+                                <h6 style="padding-top: 15px;">For us, users come first</h6>
+                            </div>
+                            <div class="coinvision__text">
+                                <p>Users always come first. From the very
+                                    beginning, the security of users was our
+                                    top priority. That's why we implemented
+                                    advanced security tools and data
+                                    confidentiality control in all COINVISION
+                                    ecosystem
+                                </p>
+                            </div>    
+                        </div>
+                        <div class="coinvision__container2">
+                            <div class="coinvision__icon">
+                                <img src="./Icon/jlv___копія__2_-removebg-preview.png" alt="" style="width: 250px;">
+                            </div>
+                            <div class="coinvision__titl">
+                                <h6 style="padding-top: 1px;">Online support 24/7</h6>
+                            </div>
+                            <div class="coinvision__text">
+                                <p style="padding-bottom: 20px;">Our experienced specialists from the
+                                    support service are always ready to help
+                                    you with any question
+                                </p>
+                            </div>    
+                        </div>
+                        <div class="coinvision__container3">
+                            <div class="coinvision__icon">
+                                <img src="./Icon/jlv___копія__3_-removebg-preview.png" alt="" style="width: 220px;">
+                            </div>
+                            <div class="coinvision__titl">
+                                <h6>Proven providers</h6>
+                            </div>
+                            <div class="coinvision__text">
+                                <p>We cooperate only with reliable fiat
+                                    providers to provide the best service in
+                                    the crypto market
+                                </p>
+                            </div>    
+                        </div>
+                        <div class="coinvision__container4">
+                            <div class="coinvision__icon">
+                                <img src="./Icon/jlv___копія__4_-removebg-preview.png" alt="" style="padding-left: 50px; width: 220px;">
+                            </div>
+                            <div class="coinvision__titl" >
+                                <h6  style="padding-top: 15px;">Areas</h6>
+                            </div>
+                            <div class="coinvision__text">
+                                <p>Our service provides a huge range of
+                                    currency choices:RUB, USD, UAH, EUR,
+                                    KZT, INR, AZN, UZS, GBP, CNY.Classic
+                                    Bitcoin and Ethereum, as well as
+                                    stablecoins USDT, USDC                            
+                                </p>
+                            </div>    
+                        </div>
+                </div>
+            </section>
+            <!--reviews-->
+            <section class="reviews">
+                <div class="reviews__title">
+                    <h3>What clients say about us</h3>
+                </div>
+                <div class="reviews__item">
+                    <div class="reviews__container1">
+                        <div class="reviews__body">
+                            <img src="./Icon/щг-removebg-preview.png" alt="" class="reviews__icon">
+                            <div class="reviews__data">
+                                <p class="reviews__name">Artem</p>
+                                <p class="reviews__date">2023-09-28 18:48:58</p>
+                            </div>
+                        </div>
+                        <div class="reviews__text">
+                            <p>Super fast exchange, happy with the
+                                result.
+                                </p>
+                        </div>
+                    </div>
+                    <div class="reviews__container2">
+                        <div class="reviews__body">
+                            <img src="./Icon/щг-removebg-preview.png" alt="" class="reviews__icon">
+                            <div class="reviews__data">
+                                <p class="reviews__name">Sasha</p>
+                                <p class="reviews__date">2023-09-28 18:47:53</p>
+                            </div>
+                        </div>
+                        <div class="reviews__text">
+                            <p>Рекомендую этот обменник всем
+                                своим знакомым и друзьям.</p>
+                        </div>
+                    </div>
+                    <div class="reviews__container3">
+                        <div class="reviews__body">
+                            <img src="./Icon/щг-removebg-preview.png" alt="" class="reviews__icon">
+                            <div class="reviews__data">
+                                <p class="reviews__name">Artur</p>
+                                <p class="reviews__date">2023-09-28 18:46:53</p>
+                            </div>
+                        </div>
+                        <div class="reviews__text">
+                            <p>I am very pleased with the speed and
+                                quality of the exchange service.</p>
+                        </div>
+                    </div>
+                    <div class="reviews__container4">
+                        <div class="reviews__body">
+                            <img src="./Icon/щг-removebg-preview.png" alt="" class="reviews__icon">
+                            <div class="reviews__data">
+                                <p class="reviews__name">Dmitriy</p>
+                                <p class="reviews__date">2023-09-28 17:47:08
+                                </p>
+                            </div>
+                        </div>
+                        <div class="reviews__text">
+                            <p>Thank you for the quick exchange,
+                                everything was great.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!--footer-->
+        <footer class="footer">
+            <div class="footer__container">
+                    <div class="footer__logo">
+                        <img src="./Image/logo-removebg-preview.png" alt="">
+                    </div>
+                    <div class="footer__menu">
+                        <ul class="footer__menu-body">
+                            <li><a href="#" class="footer__menu-item">Exchange</a></li>
+                            <li><a href="#" class="footer__menu-item">For partners</a></li>
+                            <li><a href="#" class="footer__menu-item">Exchange rules</a></li>
+                            <li><a href="#" class="footer__menu-item">AML/KYC</a></li>
+                            <li><a href="#" class="footer__menu-item">Help</a></li>
+                            <li><a href="#" class="footer__menu-item">Contacts</a></li>
+                        </ul>
+                    </div>
+            </div>
+            <div class="footer__data">
+                <p>©</p>
+                <p>Coinvision</p>
+            </div>
+        </footer>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>

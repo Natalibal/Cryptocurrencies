@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./payment.css">
+    <title>Payment</title>
+</head>
+<body>
+    <div class="payment">
+        <div class="payment__body">
+            <div class="payment__order">
+                <div class="payment__order-title">
+                    <h3>1. Payment</h3>
+                    <div class="payment__order-result">
+                        <p>Order No. <span class="order">123564</span></p>
+                    </div>
+                    <div class="payment__order-txt">
+                        <p> Make a payment within 20 minutes. After that,return to <br> our website and click the I pald button to process <br> the request</p>
+                    </div>
+                    <div class="payment__order-item1">
+                        <h6>Payment details</h6>
+                        <div class="payment__order-wallet">
+                            <img src="./Image/Ethereum_logo_2014.svg.png" alt="">
+                            <div class="payment__order-wallet-txt">
+                                <p>Wallet</p>
+                                <div class="payment__order-wallet-address">hjgvhgvlkjh;j</div>
+                            </div>
+                        </div>
+                            <div class="payment__order-wallet-icon">
+                                <img src="" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payment__order-item2">
+                        <h6>Check the address when copying!</h6>
+                        <p>Check the address when copying! To avoid the loss of your digital assets we earnestly ask you to check the first and last five <br>
+                        characters of the pasted wallet with the address from where copied it. Remember that only your alertness can help against frauds.</p>
+                    </div>
+                </div>
+                <div class="payment__order-item3">
+                    <div class="payment__order-data">
+                        <div class="payment__order-icon">
+                            <img src="./Image/Ethereum_logo_2014.svg.png" alt="">
+                        </div>
+                        <div class="payment__order-currency">
+                            <p>Wallet</p>
+                            <div>Sum and currency</div>
+                        </div>
+                    </div>
+                    <div class="payment__order-btn">
+                        <button onclick="payment()">I Paid</button>
+                    </div>
+                </div> 
+            </div>
+            <div class="payment__exchange">
+                <h3>Exchange data</h3>
+                <p>Order No. <span class="order">123456</span></p>
+                <div class="payment__exchange-item">
+                    <h6>Exchange</h6>
+                    <div class="payment__exchange-to">
+                        <img src="./Image/og-yoomoney-1.0.0.png" alt="" class="payment__exchange-icon">
+                        <p>0.02ETH</p>
+                    </div>
+                    <div class="payment__exchange-from">
+                        <img src="./Image/Ethereum_logo_2014.svg.png" alt="" class="payment__exchange-icon">
+                        <p>30.66789</p>
+                    </div>
+                </div>
+                <div class="payment__exchange-request">
+                    <h3>Request starges</h3>
+                    <div class="payment__exchange-request-1">
+                        <div class="payment__exchange-request-item">
+                            <img src="./Icon/ibp___копія__4_-removebg-preview.png" alt="" class="payment__exchange-request-img">
+                            <p class="payment__exchange-request-color">Making payment</p>
+                        </div>
+                    </div>
+                    <div class="payment__exchange-request-2">
+                        <div class="payment__exchange-request-item">
+                            <img src="./Icon/ibppl___копія__2_-removebg-preview.png" alt="" class="payment__exchange-request-img">
+                            <p>Checking payment</p>
+                        </div>
+                    </div>
+                    <div class="payment__exchange-request-3">
+                        <div class="payment__exchange-request-item">
+                            <img src="./Icon/ibppl___копія__3_-removebg-preview.png" alt="" class="payment__exchange-request-img">
+                            <p>Processing request</p>
+                        </div>
+                    </div>
+                    <div class="payment__exchange-request-4">
+                        <div class="payment__exchange-request-item">
+                            <img src="./Icon/ibppl-removebg-preview.png" alt="" class="payment__exchange-request-img">
+                            <p>Final status</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </div>
+    <script>
+        function payment() {
+            window.location.href = './verification.html';
+        }  
+    </script>
+</body>
+</html>

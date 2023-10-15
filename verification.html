@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./verification.css">
+    <title>Verification</title>
+</head>
+<body>
+    <div class="verification">
+        <div class="verification__body">
+            <div class="verification__order">
+                <div class="verification__order-title">
+                    <h3>2. Payment verification</h3>
+                    <div class="verification__order-result">
+                        <p>Order No. <span class="order">123564</span></p>
+                    </div>
+                    <div class="verification__order-txt">
+                        <p> We are currently checking the receipt of payment to our <br>
+                            account. After the payment is confirmed, the application <br>
+                            will be processed</p>
+                    </div>
+                    <div class="verification__order-item1">
+                        <h6>Payment details</h6>
+                        <div class="verification__order-wallet">
+                            <img src="./Image/Ethereum_logo_2014.svg.png" alt="">
+                            <div class="verification__order-wallet-txt">
+                                <p>Wallet</p>
+                                <div class="verification__order-wallet-address">hjgvhgvlkjh;j</div>
+                            </div>
+                            <div class="verification__order-wallet-amount">
+                                <p>Amount:</p>
+                                <div class="verification__order-wallet-amount_1">
+                                    <div class="verification__order-wallet-amount-data">0.02</div>
+                                    <div class="verification__order-wallet-amount-currency">ETH</div>
+                                </div>
+
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+            <div class="verification__order-item2">
+                <h6>
+                    We are checking the receipt of payment to our account
+                </h6>
+                <p>This may take 5 to 15 minutes. Thank you for your
+                    patience!</p>
+                <button onclick="checkTransaction()">Check transaction</button>
+            </div>
+        </div>
+            <div class="payment__exchange">
+                <h3>Exchange data</h3>
+                <p>Order No. <span class="order">123456</span></p>
+                <div class="payment__exchange-item">
+                    <h6>Exchange</h6>
+                    <div class="payment__exchange-to">
+                        <img src="./Image/og-yoomoney-1.0.0.png" alt="" class="payment__exchange-icon">
+                        <p>0.02ETH</p>
+                    </div>
+                    <div class="payment__exchange-from">
+                        <img src="./Image/Ethereum_logo_2014.svg.png" alt="" class="payment__exchange-icon">
+                        <p>30.66789</p>
+                    </div>
+                </div>
+                <div class="payment__exchange-request">
+                    <h3>Request starges</h3>
+                    <div class="payment__exchange-request-1">
+                        <div class="payment__exchange-request-item">
+                            <img src="./Icon/ibp___копія__4_-removebg-preview.png" alt="" class="payment__exchange-request-img">
+                            <p class="payment__exchange-request-color">Making payment</p>
+                        </div>
+                    </div>
+                    <div class="payment__exchange-request-2">
+                        <div class="payment__exchange-request-item">
+                            <img src="./Icon/ibp___копія__5_-removebg-preview.png" alt="" class="payment__exchange-request-img">
+                            <p class="payment__exchange-request-color">Checking payment</p>
+                        </div>
+                    </div>
+                    <div class="payment__exchange-request-3">
+                        <div class="payment__exchange-request-item">
+                            <img src="./Icon/ibppl___копія__3_-removebg-preview.png" alt="" class="payment__exchange-request-img">
+                            <p>Processing request</p>
+                        </div>
+                    </div>
+                    <div class="payment__exchange-request-4">
+                        <div class="payment__exchange-request-item">
+                            <img src="./Icon/ibppl-removebg-preview.png" alt="" class="payment__exchange-request-img">
+                            <p>Final status</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </div>
+    <script>
+        function checkTransaction() {
+            window.location.href = './final.html';
+        }  
+    </script>
+</body>
+</html>
