@@ -160,7 +160,7 @@ html, body {
 .converter__search{
     margin: 50px 0px 20px 20px;
 }
-#currencySearch{
+.currencySearch{
     padding: 5px 50px;
     border-radius: 10px;
     background-color: #686565;
@@ -525,3 +525,23 @@ input[type="checkbox"]:checked::before {
     font-size: 18px;
     padding-bottom:30px ;
  }
+
+ /* ACTIVE STYLES */
+
+.column--active {
+    --clr-accent: rgb(249, 119, 72);
+
+    color: var(--clr-accent);
+    border-color: var(--clr-accent);
+}
+
+.column > hr, .column__medium > hr  {
+    border-color: inherit;
+}
+
+.column:hover, .column__medium:hover {
+    --clr-accent: rgba(249, 119, 72, .8);
+
+    border-color: var(--clr-accent);
+    color: var(--clr-accent);
+}
