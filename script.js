@@ -1,4 +1,7 @@
 
+const hello = "World";
+
+
 //////////////////СТРОКА ПОШУКУ.................
 // Отримуємо поле вводу і результат
 const currencySearchInput = document.getElementById('currencySearch');
