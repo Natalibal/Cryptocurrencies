@@ -55,7 +55,7 @@
 <!--                                        CHANGE-->
                                     <div class="converter__container-give-select" id="currency-give">
                                         <div class="select-give"></div>
-                                        <input type="number" class="val" id="base" oninput="convert()" />
+                                        <input type="number" class="val" id="base"/>
                                     </div>
                                     <div class="converter__container-give-random">
                                         <div class="converter__container-give-min">
@@ -132,7 +132,7 @@
 <!--                                    CHANGE-->
                                 <div class="converter__container-get-select" id="currency-get">
                                     <div class="select-get"></div>
-                                    <input type="number" class="val" id="result" disabled oninput="convert()" />
+                                    <input type="number" class="val" id="result" disabled/>
                                 </div>
                                 <div class="converter__container-get-random">
                                     <div class="converter__container-get-min">
@@ -207,7 +207,7 @@
                         <p class="converter__container-right-exchange">
                             Exchange at the rate of:
                         </p>
-                        <div class="converter__container-right-result">fbsffv</div>
+                        <div class="converter__container-right-result" id="container-right-result">0.00</div>
                         <p class="converter__container-right-text">
                             You have selected the ERC20 network. Check that
                             your output/receive address supports the ERC20

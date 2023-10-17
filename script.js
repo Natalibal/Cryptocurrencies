@@ -17,6 +17,19 @@ const infoTextMedium = document.getElementById('info-text__medium');
 const searchGive = document.getElementById('currencySearchGive');
 const searchGet = document.getElementById('currencySearchGet');
 
+const baseCurrInput = document.getElementById('base');
+const baseCurr = document.getElementById('currency-give');
+const baseDetailsMin = document.querySelector('.converter__container-give-min');
+const baseDetailsMax = document.querySelector('.converter__container-give-max');
+
+const resultCurrInput = document.getElementById('result');
+const resultCurr = document.getElementById('currency-get');
+const resultDetailsMin = document.querySelector('.converter__container-get-min');
+const resultDetailsMax = document.querySelector('.converter__container-get-max');
+
+const formCalculationResult = document.getElementById('container-right-result')
+
+
 // GLOBAL VAR
 const defaultExchangeItemsArray = createArrayFromObject(currenciesConfig)
 let sortedData = structuredClone(defaultExchangeItemsArray)
@@ -25,10 +38,50 @@ const searchData = {
     give: '',
     get: ''
 }
+const minExchangeData = {
+    amount: 100,
+}
 
 // Create list based on DB object for All exchanges variants (DEFAULT)
 createExchangeItemList(sortedData, infoText);
 createExchangeItemList(sortedDataMedium, infoTextMedium);
+
+// update the "Course details form"
+const formUpdate = () => {
+    const { shortName } = exchangeData.currExchangeGet
+    let amount = exchangeData.currCalculation
+
+    if(isNaN(amount)){
+        amount = 0
+    }
+
+    formCalculationResult.innerHTML = `${amount} ${shortName}`
+}
+
+//exchange Calculator
+const culculateGet = () => {
+    let result;
+    if(typeof exchangeData.currExchangeGet === 'undefined' || typeof exchangeData.currExchangeGive === 'undefined') {
+        return
+    }
+    const exchangeVolume = exchangeData.currExchangeGiveAmount
+
+    if(exchangeData.currExchangeGive.shortName === exchangeData.currExchangeGet.shortName) {
+        result = exchangeVolume * 1
+    } else {
+        result = exchangeVolume * exchangeData.currExchangeGet.currToUSD
+    }
+    //add to the node element
+    resultCurrInput.value = result.toFixed(3)
+    //add to the globalObject
+    exchangeData.currCalculation = result
+    formUpdate()
+}
+
+//clear exchange input
+const clearinput = () => {
+    baseCurrInput.value = ''
+}
 
 //////////////////СТРОКА ПОШУКУ.................
 // Отримуємо поле вводу і результат
@@ -705,19 +758,10 @@ inputSearchHandler(searchGet, infoTextMedium, searchData.get);
     //
     //     });
 
+//     localStorage actions
+
+
 // CONVERTER
-    const baseCurr = document.getElementById('currency-give');
-    const baseDetailsMin = document.querySelector('.converter__container-give-min');
-    const baseDetailsMax = document.querySelector('.converter__container-give-max');
-
-    const resultCurr = document.getElementById('currency-get');
-    const resultDetailsMin = document.querySelector('.converter__container-get-min');
-    const resultDetailsMax = document.querySelector('.converter__container-get-max');
-
-    const minExchangeData = {
-        amount: 100,
-    }
-
     const findExchangeItemData = (entry) => {
         const result = filterExchangeTabs(defaultExchangeItemsArray, 'name', entry)
         return result[0]
@@ -753,34 +797,40 @@ inputSearchHandler(searchGet, infoTextMedium, searchData.get);
         setCurrName(name, inputNode)
     }
 
+    const setEventListenerToItems = (node, inputNode, minNode, maxNode) => {
+        node.addEventListener('click', (e) => {
+            if(e.target.dataset.type === "currencyItem") {
+                const selectorNode = e.target.closest('.currencyItemElement')
+                const selector = selectorNode.dataset.exchangeName
+                handleExchangeInput(selector, inputNode, minNode, maxNode)
+                const itemData = findExchangeItemData(selector)
 
-// Add EVENT LISTENERs ON Items
-    infoText.addEventListener('click', (e) => {
-        if(e.target.dataset.type === "currencyItem") {
-            const selector = e.target.dataset.exchangeName
-            handleExchangeInput(selector, baseCurr, baseDetailsMin, baseDetailsMax)
-        }
-    })
+                if (node.id && node.id === 'info-text') {
+                    clearinput()
+                    exchangeData.currExchangeGiveAmount = 0
+                    exchangeData.currExchangeGive = itemData
+                }
+                if (node.id && node.id === 'info-text__medium') {
+                    exchangeData.currExchangeGet = itemData
+                }
+            }
+            culculateGet()
+        })
+    }
 
-    infoTextMedium.addEventListener('click', (e) => {
-        if(e.target.dataset.type === "currencyItem") {
-            const selector = e.target.dataset.exchangeName
-            handleExchangeInput(selector, resultCurr, resultDetailsMin, resultDetailsMax)
-        }
-    })
+    // Add EVENT LISTENERs ON Items
+    setEventListenerToItems(infoText, baseCurr, baseDetailsMin, baseDetailsMax);
+    setEventListenerToItems(infoTextMedium, resultCurr, resultDetailsMin, resultDetailsMax);
 
+    const handleGiveInput = () => {
+        baseCurrInput.addEventListener('input', (e) => {
+            e.preventDefault()
+            exchangeData.currExchangeGiveAmount = (e.target.value)
+            culculateGet()
+        })
+    }
 
-
-
-
-
-
-
-
-
-
-
-
+    handleGiveInput()
 
 
 

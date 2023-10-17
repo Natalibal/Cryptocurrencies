@@ -1,25 +1,16 @@
 
 const exchangeData = {
-    currExchangeGive: {
-        name: "defaultName_1",
-        rate: 1.0,
-        type: "crypto",
-        img: undefined,
-    },
-    currExchangeGet: {
-        name: "defaultName_2",
-        rate: 1.0,
-        type: "crypto",
-        img: undefined,
-    },
-    currCalculation: null,
+    currExchangeGive: undefined,
+    currExchangeGiveAmount: 0,
+    currExchangeGet: undefined,
+    currCalculation: undefined,
     customerData: {
         id: undefined,
         name: '',
         email: '',
         wallet: undefined,
     },
-    exchangeNumber: null,
+    exchangeNumber: undefined,
 }
 
 export default exchangeData;

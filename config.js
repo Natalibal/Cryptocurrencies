@@ -3,7 +3,7 @@ const currenciesConfig = {
 		'min': 0.2, 'max': 180, 'name': 'Bitcoin', 'shortName': 'BTC', 'type': 'crypto', 'imgName': 'bitcoin', 'currToUSD': 1.3,
 	},
 	'DOG': {
-		'min': 0.3, 'max': 190, 'name': 'DOGE', 'shortName': 'DOG', 'type': 'crypto','imgName': 'curr_placeholder',
+		'min': 0.3, 'max': 190, 'name': 'DOGE', 'shortName': 'DOG', 'type': 'crypto','imgName': 'curr_placeholder', 'currToUSD': 0.3,
 
 	}, 'LIT': {
 		'min': 0.4, 'max': 200, 'name': 'Litecoin', 'shortName': 'LIT', 'type': 'crypto','imgName': 'curr_placeholder',

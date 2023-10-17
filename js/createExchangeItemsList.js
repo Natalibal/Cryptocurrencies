@@ -2,6 +2,7 @@ const createExchangeItemLi = (obj) => {
     const { name, imgName } = obj;
 
     const li = document.createElement('li');
+    li.classList.add('currencyItemElement')
     li.dataset.type = "currencyItem";
     li.dataset.exchangeName = `${name}`;
     li.style.cssText += "cursor: pointer; display: flex;";
