@@ -548,3 +548,7 @@ input[type="checkbox"]:checked::before {
     border-color: var(--clr-accent);
     color: var(--clr-accent);
 }
+.currencyItemImage {
+    height: 45px;
+    padding: 4px;
+}

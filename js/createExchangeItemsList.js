@@ -7,7 +7,7 @@ const createExchangeItemLi = (obj) => {
     li.style.cssText += "cursor: pointer; display: flex;";
 
     li.innerHTML = `
-            <img src="./Image/${imgName}.png" alt=${name} data-type='currencyItem' data-exchange-name=${name}>
+            <img src="./Image/${imgName}.png" alt=${name} data-type='currencyItem' data-exchange-name=${name} class='currencyItemImage'>
             <p data-type='currencyItem' data-exchange-name=${name} style="padding: 11px 0px; margin: 10px 0px;">${name}</p>
         `;
     return li
