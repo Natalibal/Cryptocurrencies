@@ -5,6 +5,7 @@ import createExchangeItemList from './js/createExchangeItemsList.js'
 import filterExchangeTabs from './js/filterExcjangeTabs.js'
 import handleTabsActiveStyle from './js/handleTabsActiveStyle.js'
 import filterExchangeItems from './js/filterExchangeItems.js'
+import generateOrderNumber from './js/generateOrderNumber.js'
 
 // NODES
 const columns = document.querySelectorAll('.column');
@@ -839,14 +840,14 @@ inputSearchHandler(searchGet, infoTextMedium, searchData.get);
         const email = document.getElementById('formEmail')
         const wallet = document.getElementById('formWallet')
 
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', (e) => {
             exchangeData.customerData.email = email.value
             exchangeData.customerData.wallet = wallet.value
+            exchangeData.exchangeNumber = generateOrderNumber()
+            console.log(exchangeData)
         })
     }
     collectUserData()
-
-
 
 
 /////////////////ПОГОДЖЕННЯ З УМОВАМИ І ПРАВИЛАМИ  ................
