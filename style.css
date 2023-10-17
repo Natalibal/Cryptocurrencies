@@ -526,7 +526,10 @@ input[type="checkbox"]:checked::before {
     padding-bottom:30px ;
  }
 
- /* ACTIVE STYLES */
+ /* ACTIVE & COLUMN STYLES */
+.column, .column__medium  {
+    cursor: pointer;
+}
 
 .column--active {
     --clr-accent: rgb(249, 119, 72);

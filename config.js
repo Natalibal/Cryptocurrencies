@@ -48,9 +48,6 @@ const currenciesConfig = {
 	}, 'Dash': {
 		'min': 0.2, 'max': 180, 'name': 'Dash', 'type': 'crypto',
 
-	}, 'Sw': {
-		'min': 0.2, 'max': 180, 'name': 'SWEAT', 'type': 'crypto',
-
 	}, 'Tet TRC20': {
 		'min': 0.2, 'max': 180, 'name': 'Tether TRC20', 'type': 'crypto',
 
@@ -64,7 +61,7 @@ const currenciesConfig = {
 		'min': 0.2, 'max': 180, 'name': 'Tether SOL', 'type': 'crypto',
 
 	}, 'Sber': {
-		'min': 0.2, 'max': 180, 'name': 'Sberbank RU', 'type': 'banka',
+		'min': 0.2, 'max': 180, 'name': 'Sberbank RU', 'type': 'banks',
 
 	}, 'Visa/MC kzt': {
 		'min': 0.2, 'max': 180, 'name': 'Visa/MC kzt', 'type': 'payment',

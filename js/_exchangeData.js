@@ -1,12 +1,12 @@
 
 const exchangeData = {
-    currExchangeFrom: {
+    currExchangeGive: {
         name: "defaultName_1",
         rate: 1.0,
         type: "crypto",
         img: undefined,
     },
-    currExchangeTo: {
+    currExchangeGet: {
         name: "defaultName_2",
         rate: 1.0,
         type: "crypto",

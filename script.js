@@ -13,8 +13,14 @@ const infoText = document.getElementById('info-text');
 const columnsMedium = document.querySelectorAll('.column__medium');
 const infoBoxMedium = document.querySelector('.info-box-medium');
 const infoTextMedium = document.getElementById('info-text__medium');
+
 const searchGive = document.getElementById('currencySearchGive');
 const searchGet = document.getElementById('currencySearchGet');
+
+const base = document.getElementById('base');
+const baseDetails = document.querySelector('.converter__container-give-min');
+const result = document.getElementById('result');
+const resultDetails = document.querySelector('.converter__container-get-min');
 
 // GLOBAL VAR
 const defaultExchangeItemsArray = createArrayFromObject(currenciesConfig)
@@ -24,6 +30,10 @@ const searchData = {
     give: '',
     get: ''
 }
+
+// Create list based on DB object for All exchanges variants (DEFAULT)
+createExchangeItemList(sortedData, infoText);
+createExchangeItemList(sortedDataMedium, infoTextMedium);
 
 //////////////////СТРОКА ПОШУКУ.................
 // Отримуємо поле вводу і результат
@@ -84,14 +94,7 @@ inputSearchHandler(searchGet, infoTextMedium, searchData.get);
     let isExpanded = false;
 
     //  Слушаем клики только на нужные нам елементы с выбором валют
-    infoText.addEventListener('click', (e) => {
-        if(e.target.dataset.type === "currencyItem") {
-            console.log(e.target.dataset.exchangeName)
-        }
-    })
 
-    // Create list based on DB object for All exchanges variants (DEFAULT)
-    createExchangeItemList(sortedData, infoText);
 
     // Add EVENT LISTENER ON TABS
     columns.forEach(item => {
@@ -327,10 +330,6 @@ inputSearchHandler(searchGet, infoTextMedium, searchData.get);
     infoBoxMedium.style.display = 'block';
     let isExpandedMedium = false;
 
-    // Create list based on DB object for All exchanges variants (DEFAULT)
-    createExchangeItemList(sortedDataMedium, infoTextMedium);
-
-    // Add EVENT LISTENER ON TABS
     columnsMedium.forEach(item => {
         item.addEventListener('click', (e) => {
             const selector = e.target.closest('.column__medium').dataset.info.toLowerCase()
@@ -338,12 +337,6 @@ inputSearchHandler(searchGet, infoTextMedium, searchData.get);
             handleTabsActiveStyle(columnsMedium, selector, "column--active")
             clearSearch(searchGet)
         })
-    })
-
-    infoTextMedium.addEventListener('click', (e) => {
-        if(e.target.dataset.type === "currencyItem") {
-            console.log(e.target.dataset.exchangeName)
-        }
     })
 
 
@@ -717,11 +710,25 @@ inputSearchHandler(searchGet, infoTextMedium, searchData.get);
     //
     //     });
 
+    // CONVERTER
+
+    const setInputConverter = (arr, entry) => {
+        const result = filterExchangeTabs(arr, 'name', entry)
+    }
 
 
+    // Add EVENT LISTENERs ON Items
+    infoText.addEventListener('click', (e) => {
+        if(e.target.dataset.type === "currencyItem") {
+            console.log(e.target.dataset.exchangeName)
+        }
+    })
 
-
-
+    infoTextMedium.addEventListener('click', (e) => {
+        if(e.target.dataset.type === "currencyItem") {
+            console.log(e.target.dataset.exchangeName)
+        }
+    })
 
 
 
