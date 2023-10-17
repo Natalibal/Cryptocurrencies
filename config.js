@@ -1,6 +1,6 @@
 const currenciesConfig = {
 	'BTC': {
-		'min': 0.2, 'max': 180, 'name': 'Bitcoin', 'type': 'crypto',
+		'min': 0.2, 'max': 180, 'name': 'Bitcoin', 'type': 'crypto', 'imgName': 'bitcoin',
 	},
 	'DOG': {
 		'min': 0.3, 'max': 190, 'name': 'DOGE', 'type': 'crypto',
