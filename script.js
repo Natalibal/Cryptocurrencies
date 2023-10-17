@@ -17,11 +17,6 @@ const infoTextMedium = document.getElementById('info-text__medium');
 const searchGive = document.getElementById('currencySearchGive');
 const searchGet = document.getElementById('currencySearchGet');
 
-const base = document.getElementById('base');
-const baseDetails = document.querySelector('.converter__container-give-min');
-const result = document.getElementById('result');
-const resultDetails = document.querySelector('.converter__container-get-min');
-
 // GLOBAL VAR
 const defaultExchangeItemsArray = createArrayFromObject(currenciesConfig)
 let sortedData = structuredClone(defaultExchangeItemsArray)
@@ -710,25 +705,70 @@ inputSearchHandler(searchGet, infoTextMedium, searchData.get);
     //
     //     });
 
-    // CONVERTER
+// CONVERTER
+    const baseCurr = document.getElementById('currency-give');
+    const baseDetailsMin = document.querySelector('.converter__container-give-min');
+    const baseDetailsMax = document.querySelector('.converter__container-give-max');
 
-    const setInputConverter = (arr, entry) => {
-        const result = filterExchangeTabs(arr, 'name', entry)
+    const resultCurr = document.getElementById('currency-get');
+    const resultDetailsMin = document.querySelector('.converter__container-get-min');
+    const resultDetailsMax = document.querySelector('.converter__container-get-max');
+
+    const minExchangeData = {
+        amount: 100,
+    }
+
+    const findExchangeItemData = (entry) => {
+        const result = filterExchangeTabs(defaultExchangeItemsArray, 'name', entry)
+        return result[0]
+    }
+
+    const getMinAmountToExchange = (currRate, amount) => {
+        const result = amount / currRate
+        return result.toFixed(2)
+    }
+
+    const setMinMax = (currName, min, max, minNode, maxNode) => {
+        let minAmount = min
+        if (isNaN(min)) {
+            minAmount = '---'
+        }
+        minNode.lastElementChild.textContent = currName
+        minNode.lastElementChild.previousElementSibling.textContent = minAmount
+
+        maxNode.lastElementChild.textContent = currName
+        maxNode.lastElementChild.previousElementSibling.textContent = max
+    }
+    const setCurrName = (name, node) => {
+        node.firstElementChild.textContent = name
     }
 
 
-    // Add EVENT LISTENERs ON Items
+    const handleExchangeInput = (selector, inputNode, minNode, maxNode) => {
+        const itemData = findExchangeItemData(selector)
+        const { name, max, currToUSD ,shortName} = itemData
+        const currMin = getMinAmountToExchange(currToUSD, minExchangeData.amount)
+
+        setMinMax(shortName, currMin, max, minNode, maxNode)
+        setCurrName(name, inputNode)
+    }
+
+
+// Add EVENT LISTENERs ON Items
     infoText.addEventListener('click', (e) => {
         if(e.target.dataset.type === "currencyItem") {
-            console.log(e.target.dataset.exchangeName)
+            const selector = e.target.dataset.exchangeName
+            handleExchangeInput(selector, baseCurr, baseDetailsMin, baseDetailsMax)
         }
     })
 
     infoTextMedium.addEventListener('click', (e) => {
         if(e.target.dataset.type === "currencyItem") {
-            console.log(e.target.dataset.exchangeName)
+            const selector = e.target.dataset.exchangeName
+            handleExchangeInput(selector, resultCurr, resultDetailsMin, resultDetailsMax)
         }
     })
+
 
 
 
