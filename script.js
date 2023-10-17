@@ -76,6 +76,7 @@ const culculateGet = () => {
     //add to the globalObject
     exchangeData.currCalculation = result
     formUpdate()
+    console.log(exchangeData)
 }
 
 //clear exchange input
@@ -831,6 +832,20 @@ inputSearchHandler(searchGet, infoTextMedium, searchData.get);
     }
 
     handleGiveInput()
+
+    // FORM Event Listener (get EMAIL and Wallet)
+    const collectUserData = () => {
+        const btn = document.getElementById('submitButton')
+        const email = document.getElementById('formEmail')
+        const wallet = document.getElementById('formWallet')
+
+        btn.addEventListener('click', () => {
+            exchangeData.customerData.email = email.value
+            exchangeData.customerData.wallet = wallet.value
+        })
+    }
+    collectUserData()
+
 
 
 
