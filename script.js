@@ -30,7 +30,6 @@ const resultDetailsMax = document.querySelector('.converter__container-get-max')
 
 const formCalculationResult = document.getElementById('container-right-result')
 
-
 // GLOBAL VAR
 const defaultExchangeItemsArray = createArrayFromObject(currenciesConfig)
 let sortedData = structuredClone(defaultExchangeItemsArray)
@@ -844,7 +843,8 @@ inputSearchHandler(searchGet, infoTextMedium, searchData.get);
             exchangeData.customerData.email = email.value
             exchangeData.customerData.wallet = wallet.value
             exchangeData.exchangeNumber = generateOrderNumber()
-            console.log(exchangeData)
+            sendToLocalStorage("exchangeData", exchangeData);
+            startExchange()
         })
     }
     collectUserData()
@@ -859,6 +859,10 @@ const checkbox = document.getElementById('agreement');
         });
    ////////Відправка на сторінку оплати
    function startExchange() {
-    window.location.href = './payment.html';
-}  
+       const url = './payment.html';
+       window.open(url);
+    }
 
+function sendToLocalStorage(key, data) {
+    window.localStorage.setItem(key, JSON.stringify(data));
+}
