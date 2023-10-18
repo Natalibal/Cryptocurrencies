@@ -69,7 +69,7 @@ const culculateGet = () => {
     if(exchangeData.currExchangeGive.shortName === exchangeData.currExchangeGet.shortName) {
         result = exchangeVolume * 1
     } else {
-        result = exchangeVolume * exchangeData.currExchangeGet.currToUSD
+        result = (exchangeVolume * exchangeData.currExchangeGive.currToUSD) / exchangeData.currExchangeGet.currToUSD
     }
     //add to the node element
     resultCurrInput.value = result.toFixed(3)
@@ -866,3 +866,83 @@ const checkbox = document.getElementById('agreement');
 function sendToLocalStorage(key, data) {
     window.localStorage.setItem(key, JSON.stringify(data));
 }
+
+// --- Currency ---
+function randomNumber(min, max) {
+    return Math.random() * (max - min) + min;
+}
+function getRandomDateInRange(days) {
+    const newDate = Date.now()
+    const dayInterval = 1000 * 60 * 60 * 24;
+    const daysCount = (dayInterval * days) - 6000
+    const newRandomDate = randomNumber(0, daysCount)
+
+
+    const rndDay = new Date(newDate - newRandomDate)
+    const year = rndDay.getFullYear()
+    let mon = rndDay.getMonth() +1
+    let day = rndDay.getUTCDate()
+
+    function addZero(num) {
+        if(num === 0){
+            return `01`
+        }
+        if(num <= 9) {
+            return `0${num}`
+        }
+        return num
+    }
+
+    const str = `${addZero(day)}.${addZero(mon)}.${year}`
+    return str
+}
+
+function createResentCurrExchangeElement(selector) {
+        const data = defaultExchangeItemsArray;
+
+        const item1 = data[Math.floor(randomNumber(0, data.length - 1))];
+        const item2 = data[Math.floor(randomNumber(0, data.length - 1))];
+
+    const node = document.querySelector(`.${selector}`);
+        const currOne = item1.shortName;
+        const currOneImgName = item1.imgName;
+
+        const currTwo = item2.shortName;
+        const currTwoImgName = item2.imgName;
+
+        const newDate = getRandomDateInRange(3)
+        let volume = randomNumber(1, 100).toFixed(2)
+
+        if(currOne === 'BTC') {
+            volume = Math.random().toFixed(4)
+        }
+
+       const div = document.createElement('div')
+        div.classList.add(`${selector}-item`)
+        div.innerHTML = `
+            <div class="currency__container-left-number">${volume}</div>
+            <div class="currency__container-left-currency">${currOne}</div>
+            <div class="currency__container-left-icon">
+                <img src="./Image/${currOneImgName}.png" alt="" style="width:50px">
+            </div>
+            <div class="currency__container-left-arrow">
+                <img src="./Icon/icon-arrow-right.png" alt="arrow-right">
+            </div>
+            <div class="currency__container-left-currency">${currTwo}</div>
+            <div class="currency__container-left-icon">
+                <img src="./Image/${currTwoImgName}.png" alt="" style="width:50px">
+            </div>
+            <div class="currency__container-left-clock">
+                <img src="./Icon/ibppl___копія__3_-removebg-preview.png" alt="clock-time">
+            </div>
+            <div class="currency__container-left-date">${newDate}</div>
+        `
+        node.appendChild(div)
+}
+function createHtmlElement(selector, iterator) {
+       for(let i = 0; i < iterator; i++) {
+           createResentCurrExchangeElement(selector)
+       }
+}
+createHtmlElement('currency__container-left', 4)
+createHtmlElement('currency__container-right', 4)
